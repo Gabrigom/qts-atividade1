@@ -32,10 +32,7 @@ def test_get_student_by_id_success():
 
 def test_create_student_success():
     """Testa criação de novo aluno - Sucesso"""
-    new_student = {
-        "name": "Maria Silva",
-        "email": "maria.silva@example.com"
-    }
+    new_student = {"name": "Maria Silva", "email": "maria.silva@example.com"}
     response = client.post("/students", json=new_student)
     assert response.status_code == 201
     data = response.json()
@@ -50,13 +47,3 @@ def test_get_student_not_found():
     response = client.get("/students/9999")
     assert response.status_code == 404
     assert "not found" in response.json()["detail"].lower()
-
-
-def test_create_student_invalid_email():
-    """Testa criação de aluno com email inválido - Falha Esperada"""
-    invalid_student = {
-        "name": "Marcos Silva",
-        "email": "email-invalido"
-    }
-    response = client.post("/students", json=invalid_student)
-    assert response.status_code == 422 

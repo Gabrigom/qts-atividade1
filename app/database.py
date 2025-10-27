@@ -2,7 +2,8 @@ from app.models import Student
 
 # Simulação de banco de dados em memória
 students_db = [
-    Student(id=1, name="Vinicius Gabriel Miranda Gomes", email="vinny.gab18@gmail.com")
+    Student(id=1, name="Vinicius Gabriel", email="vinny.gab18@gmail.com"),
+    Student(id=2, name="Miranda Gomes", email="vgabrigom@gmail.com"),
 ]
 
 

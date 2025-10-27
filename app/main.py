@@ -23,7 +23,7 @@ def get_student(student_id: int):
     if not student:
         raise HTTPException(
             status_code=status.HTTP_404_NOT_FOUND,
-            detail=f"Aluno com id {student_id} não encontrado."
+            detail=f"Aluno com id {student_id} não encontrado.",
         )
     return student
 
