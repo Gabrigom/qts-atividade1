@@ -46,4 +46,4 @@ def test_get_student_not_found():
     """Testa busca de aluno inexistente - Falha Esperada"""
     response = client.get("/students/9999")
     assert response.status_code == 404
-    assert "not found" in response.json()["detail"].lower()
+    assert "não encontrado" in response.json()["detail"].lower()
